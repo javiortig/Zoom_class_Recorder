@@ -44,10 +44,11 @@ def grabar():
 def askAndWait():
     x = int(input("A que hora:"))
     date = datetime.now()
-    date = date.replace(hour=x)
-
+    date = date.replace(hour=x).replace(minute=0)
+    print("Se iniciara a las: ", end='')
+    print(date)
     while date > datetime.now():
-        time.sleep(1)
+        time.sleep(60)
 
 def prueba():
     abrir_chrome()
